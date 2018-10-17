@@ -32,17 +32,6 @@ def find_tour_iter(node, graph, tour):
 				reduced_graph = [e for e in unvisited if e != edge]
 				open_list.append([next_node, reduced_graph])
 
-def find_euler_tour(node, graph, tour):
-	open_list = [node]
-	while len(open_list) > 0:
-		if graph[node]:
-			open_list.append(node)
-			node = graph[node].pop()
-		else:
-			tour.append(node)
-			node = open_list.pop()
-	return tour
-
 def find_eulerian_tour(graph):
 	tour = []
 	# find_tour(graph[0][0], graph, tour)
